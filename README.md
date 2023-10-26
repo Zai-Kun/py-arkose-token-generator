@@ -1,1 +1,1 @@
-# py-arkose-token-generator
+# PY arkose-token generator
