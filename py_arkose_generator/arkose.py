@@ -55,16 +55,3 @@ def get_values_for_request(options):
         "data": data,
     }
     return args
-
-
-if __name__ == "__main__":
-    opt = {
-        "pkey": "3D86FBBA-9D22-402A-B512-3420086BA6CC",
-        "surl": "https://tcr9i.chat.openai.com",
-        "headers": {
-            "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/118.0"
-        },
-        "site": "https://chat.openai.com",
-    }
-
-    print(get_values_for_request(opt))
