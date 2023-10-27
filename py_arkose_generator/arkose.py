@@ -4,6 +4,20 @@ from . import util
 
 
 def get_values_for_request(options):
+    """
+    The get_values_for_request function is used to construct the data that will be sent in a request.
+        It takes an options dictionary as input, and returns a dictionary containing the url, headers, and data for the request.
+        The options dictionary can contain any of these keys:
+            'data': A dict containing key-value pairs that will be sent with the request (e.g., {'text': 'Hello world!'})
+            'pkey': The public key for your OpenAI API account (e.g., &quot;3D86FBBA-9D22-402A-B512-3420086BA
+
+    Args:
+        options: Pass in the data, pkey, surl and headers
+
+    Returns:
+        A dictionary with the following keys: url, header and data
+    """
+
     options = {
         "data": {},
         "pkey": "3D86FBBA-9D22-402A-B512-3420086BA6CC",

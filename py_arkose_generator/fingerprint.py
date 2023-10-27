@@ -361,10 +361,27 @@ screenRes = [
 
 
 def randomScreenRes():
+    """
+    The randomScreenRes function returns a random screen resolution from the list of screen resolutions.
+        The function is called in the main() function to set the initial window size.
+
+    Returns:
+        A random value from the screenres list
+    """
+
     return random.choice(screenRes)
 
 
 def getFingerprint():
+    """
+    The getFingerprint function creates a copy of the base fingerprint and then
+    randomizes all of the values. The function returns a dictionary containing
+    the randomized fingerprint.
+
+    Returns:
+        A dictionary of randomized fingerprint.
+    """
+
     fingerprint = baseFingerprint.copy()  # Create a copy of the base fingerprint
 
     fingerprint["DNT"] = "unknown"
@@ -402,6 +419,19 @@ def getFingerprint():
 
 
 def prepareF(fingerprint):
+    """
+    The prepareF function takes a fingerprint as input and returns a string representation of the fingerprint.
+    The string representation is created by concatenating all key-value pairs in the dictionary with &quot;~~~&quot; between each pair.
+    If the value associated with a key is an array, then it will be converted to a comma separated list before being added to
+    the output string.
+
+    Args:
+        fingerprint: Store the fingerprint data
+
+    Returns:
+        A string of the fingerprint
+    """
+
     f = []
     for key in fingerprint:
         if isinstance(fingerprint[key], list):
@@ -412,6 +442,17 @@ def prepareF(fingerprint):
 
 
 def cfpHash(H8W):
+    """
+    The cfpHash function is a simple hash function that takes in a string and returns an integer.
+    The cfpHash function is used to generate the unique identifier for each file, which will be stored in the database.
+
+    Args:
+        H8W: Generate the hash
+
+    Returns:
+        A string of the hash value
+    """
+
     l8W, U8W = 0, 0
     if not H8W:
         return ""
@@ -430,6 +471,22 @@ def cfpHash(H8W):
 
 
 def prepareFe(fingerprint):
+    """
+    The prepareFe function takes a fingerprint as input and returns a list of strings.
+    Each string in the list is formatted as follows:
+        key:value
+    where key is one of the keys from the fingerprint dictionary, and value is either
+    the corresponding value from that dictionary or an altered version thereof. The
+    altered versions are for CFPs (which are hashed) and P values (which have their
+    namespaces removed). This function makes it easier to write fingerprints to files.
+
+    Args:
+        fingerprint: Pass in the fingerprint object
+
+    Returns:
+        A list of strings
+    """
+
     fe = []
     for key in fingerprint:
         if key == "CFP":
@@ -497,6 +554,18 @@ baseEnhancedFingerprint = {
 
 
 def getEnhancedFingerprint(fp, ua, opts):
+    """
+    The getEnhancedFingerprint function is responsible for generating the enhanced fingerprint.
+
+    Args:
+        fp: Get the screen resolution and browser language
+        ua: Get the user agent
+        opts: Pass in the pkey and surl values
+
+    Returns:
+        A list of dictionaries
+    """
+
     fingerprint = baseEnhancedFingerprint.copy()
 
     # Modify the 'fingerprint' dictionary according to your JavaScript code

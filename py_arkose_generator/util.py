@@ -12,12 +12,32 @@ DEFAULT_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.
 
 
 def _random():
+    """
+    The _random function generates a random string of 32 hexadecimal characters.
+    This is used to generate the unique identifier for each user.
+
+    Args:
+
+    Returns:
+        A string of 32 hexadecimal characters
+    """
+
     hex_chars = "0123456789abcdef"
     random_string = "".join(random.choice(hex_chars) for _ in range(32))
     return random_string
 
 
 def constructFormData(data):
+    """
+    The constructFormData function takes a dictionary of data and returns a string that is properly encoded for use in an HTTP POST request.
+
+    Args:
+        data: Pass the data to be encoded
+
+    Returns:
+        A string that can be used as the body of an http post request
+    """
+
     filtered_data = {k: v for k, v in data.items() if v is not None}
     encoded_data = [
         f"{k}={urllib.parse.quote(str(v))}" for k, v in filtered_data.items()
@@ -27,6 +47,17 @@ def constructFormData(data):
 
 
 def getBda(userAgent, opts):
+    """
+    The getBda function is used to generate a bda value for the request.
+
+    Args:
+        userAgent: Encrypt the bda
+        opts: Pass the options to the getenhancedfingerprint function
+
+    Returns:
+        A base64 encoded string
+    """
+
     fp = getFingerprint()
     fe = prepareFe(fp)
 
