@@ -1,8 +1,3 @@
-# PY arkose-token generator
-
-## Example usage
-
-```python
 import requests
 from py_arkose_generator.arkose import get_values_for_request
 
@@ -16,14 +11,10 @@ opt = {
 }
 
 args_for_request = get_values_for_request(opt)
-response = requests.get(**args_for_request)
+response = requests.post(**args_for_request)
 decoded_json = response.json()
 
 if "token" in decoded_json:
     print(decoded_json["token"])
 else:
     print(f"Erro!\n {decoded_json}")
-
-```
-
-Originally translated from [funcaptcha](https://github.com/noahcoolboy/funcaptcha)
