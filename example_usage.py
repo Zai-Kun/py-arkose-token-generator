@@ -17,4 +17,4 @@ decoded_json = response.json()
 if "token" in decoded_json:
     print(decoded_json["token"])
 else:
-    print(f"Erro!\n {decoded_json}")
+    print(f"Error!\n {decoded_json}")
