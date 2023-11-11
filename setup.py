@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 
-import setuptools
+from setuptools import find_packages, setup
 
 if __name__ == "__main__":
-    setuptools.setup()
+    setup(
+        name='py_arkose_generator',
+        packages=find_packages(),
+    )
