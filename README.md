@@ -28,4 +28,10 @@ else:
 
 ```
 
+### Installation
+
+```sh
+pip install git+https://github.com/Zai-Kun/py-arkose-token-generator.git
+```
+
 Originally translated from [funcaptcha](https://github.com/noahcoolboy/funcaptcha)
