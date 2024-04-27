@@ -3,8 +3,10 @@ import hashlib
 import json
 import random
 
-from Crypto.Cipher import AES
-
+try:
+    from Crypto.Cipher import AES
+except ImportError:
+    from Cryptodome.Cipher import AES
 
 def pad(data):
     # Convert the string to bytes and calculate the number of bytes to pad
